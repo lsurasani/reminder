@@ -1,7 +1,7 @@
 class SendMessagesController < ApplicationController
   skip_forgery_protection
 
-  def send
+  def send(params = "hi")
     puts "here"
     client = helpers.boot_twilio
     client.messages.create(
