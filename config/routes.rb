@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  root :to => 'messages#index'
   get 'messages/reply'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resource :messages do
@@ -9,9 +9,5 @@ Rails.application.routes.draw do
   end
 
   get 'send_messages/send'
-  # resource :messages do
-  #   collection do
-  #     post 'send'
-  #   end
-  # end
+
 end

@@ -12,4 +12,8 @@ class MessagesController < ApplicationController
       body: "Hi!!!!"
     )
   end
+
+  def index
+
+  end
 end
