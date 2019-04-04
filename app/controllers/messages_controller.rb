@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
       send_body = ":)"
     when "snooze"
       send_body = "How many hours?"
-    when -> (n) { Float(self) != nil rescue false }
+    when -> (n) { Float(n) != nil rescue false }
       send_body = "I'll remind you in #{message_body} hours."
     else
       send_body = "I'm sorry, I didn't get that."
