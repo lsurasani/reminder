@@ -15,6 +15,8 @@ class MessagesController < ApplicationController
       send_body = "How many hours?"
     when -> (n) { Float(n) != nil rescue false }
       send_body = "I'll remind you in #{message_body} hours."
+      num_hours = Float(message_body)
+      DelayMessageJob.set(wait: num_hours.hours).perform_later 
     else
       send_body = "I'm sorry, I didn't get that."
     end

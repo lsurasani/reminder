@@ -1,4 +1,6 @@
 class SendMessage < ApplicationRecord
+  attr_accessor :daily_remind_reply
+
   def send_daily(params = "hi")
     puts "here"
     client = ApplicationController.helpers.boot_twilio
@@ -8,4 +10,5 @@ class SendMessage < ApplicationRecord
       body: 'Did you remember to take your medicine today?'
     )
   end
+
 end
