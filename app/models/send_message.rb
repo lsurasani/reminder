@@ -1,9 +1,7 @@
-class SendMessagesController < ApplicationController
-  skip_forgery_protection
-
+class SendMessage < ApplicationRecord
   def send_daily(params = "hi")
     puts "here"
-    client = helpers.boot_twilio
+    client = ApplicationController.helpers.boot_twilio
     client.messages.create(
       from: ENV['PHONE_NUMBER'],
       to: ENV['PERSONAL_PHONE_NUMBER'],

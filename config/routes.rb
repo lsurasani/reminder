@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'send_messages/send'
+  get 'send_messages/send_daily'
 
 end
